@@ -52,15 +52,9 @@ public with sharing class VariablesDataTypesOperators {
      * @return The difference between the two numbers.
      */
     public static Integer subtraction(Integer a, Integer b) {
-        Integer c;
-        if(a == null || b == null) {
-            return null;
-        }
-        else {
-                 c = a - b;                 
-            }
-            System.debug(c);
-            return c; // Replace null with the variable you used to store the result
+        Integer c = a - b;
+        System.debug(c);
+        return c; // Replace null with the variable you used to store the result
         }
     /**
      * Performs multiplication of two numbers.
@@ -70,15 +64,9 @@ public with sharing class VariablesDataTypesOperators {
      * @return The product of the two numbers.
      */
     public static Integer multiplication(Integer a, Integer b) {
-        Integer c;
-        if(a == null || b == null) {
-            return null;
-        }
-        else {
-                 c = a * b;
-            }
-            System.debug(c);
-            return c; // Replace null with the variable you used to store the result
+        Integer c = a * b;
+        System.debug(c);
+        return c; // Replace null with the variable you used to store the result
         }
 
     /**
@@ -92,8 +80,8 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Decimal division(Integer a, Integer b) {
         Integer c;
-        if(a == null || b == null) {
-            return null;
+        if(b == 0) {
+            c = 0;
         }
         else {
                  c = a / b;
@@ -170,7 +158,7 @@ public with sharing class VariablesDataTypesOperators {
 	 * @return The complete sentence as a single String.
 	 */
 	public static String createSentence(String noun, String verb, String endingPunctuation) {
-        string sentence = 'The' + ' ' + noun + ' ' + verb + ' ' + endingPunctuation;
+        string sentence = 'The' + ' ' + noun + ' ' + 'is' + ' ' + verb + endingPunctuation;
         System.debug(sentence);
 		return sentence; // Replace null with the variable you used to store the result
 	}
@@ -186,7 +174,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Boolean isDateInPast(Date dt) {
     Boolean isPastDate;
-        if(dt >= date.today()){
+        if(dt <= date.today()){
             isPastDate = true;
         }
         else {
@@ -226,8 +214,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer convertMinutesToMilliseconds(Integer minutes) {
         final Integer MILLISECONDS_PER_MINUTE = 60000; // Make this value a constant
-        Integer milliseconds;
-        milliseconds *=  MILLISECONDS_PER_MINUTE;
+        Integer milliseconds = minutes * MILLISECONDS_PER_MINUTE; 
         return milliseconds; // Replace null with the variable you used to store the result
     }    
 
